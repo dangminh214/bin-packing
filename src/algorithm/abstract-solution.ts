@@ -5,9 +5,9 @@
  * This interface allows algorithms to interact with a problem
  * without knowing its specific rules or geometry.
  */
-export abstract class Solution<I> {
+export abstract class Solution<B> {
     runtime: number; //ms
-    items: I[];
+    items: B[];
 
     constructor() {
         this.runtime = 0;
@@ -20,9 +20,5 @@ export abstract class Solution<I> {
 
     getFormattedRunTime(): string {
         return this.runtime.toFixed(2) + " ms";
-    }
-
-    getItems(): readonly I[] {
-        return this.items;
     }
 }

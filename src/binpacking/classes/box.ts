@@ -55,7 +55,7 @@ export class Box {
         // 2. Overlap check
         for (const r of this.rectangles) {
             if (
-                x < r.getHeight() + r.getWidth() &&
+                x < r.position.x! + r.getWidth() &&
                 x + rectangle.getWidth() > r.position.x! &&
                 y < r.position.y! + r.getHeight() &&
                 y + rectangle.getHeight() > r.position.y!

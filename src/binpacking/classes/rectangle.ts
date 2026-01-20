@@ -1,5 +1,6 @@
 import type { IItem } from "@/core/i-item";
-import type { Position } from "../types/position";
+
+export type Position = { x: number | null; y: number | null };
 
 export class Rectangle implements IItem {
     readonly id: number;
@@ -22,6 +23,11 @@ export class Rectangle implements IItem {
 
     get position(): Position {
         return { x: this.x, y: this.y };
+    }
+
+    setPosition(x: number, y: number) {
+        this.x = x;
+        this.y = y;
     }
 
     getWidth(): number {
