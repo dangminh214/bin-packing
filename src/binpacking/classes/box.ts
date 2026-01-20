@@ -22,26 +22,6 @@ export class Box {
         return this.rectangles;
     }
 
-    // checkOverlapping(rect1: Rectangle, rect2: Rectangle): boolean {
-    //     const { x: x1, y: y1 } = rect1.position;
-    //     const { x: x2, y: y2 } = rect2.position;
-
-    //     return !(
-    //         x1! + rect1.getWidth() <= x2! ||
-    //         x2! + rect2.getWidth() <= x1! ||
-    //         y1! + rect1.getHeight() <= y2! ||
-    //         y2! + rect2.getHeight() <= y1!
-    //     );
-    // }
-
-    // checkOverflowed(rectangle: Rectangle): boolean {
-    //     const { x, y } = rectangle.position;
-    //     return (
-    //         x! + rectangle.getWidth() > this.boxL ||
-    //         y! + rectangle.getHeight() > this.boxL
-    //     );
-    // }
-
     checkPossible(rectangle: Rectangle, pos: Position): boolean {
         const x = pos.x!;
         const y = pos.y!;
