@@ -21,6 +21,10 @@ export class Rectangle implements IItem {
         this.area = this.height * this.width;
     }
 
+    getIsRotated(): boolean {
+        return this.isRotated;
+    }
+
     get position(): Position {
         return { x: this.x, y: this.y };
     }
