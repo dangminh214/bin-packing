@@ -28,7 +28,7 @@ export abstract class GreedyPlacement<
     protected abstract canPlace(
         item: I,
         solution: S,
-    ): { id: number; x: number; y: number } | false;
+    ): { cid: number; x: number; y: number } | false;
 
     /**
      * insert an item into a solution
@@ -37,6 +37,6 @@ export abstract class GreedyPlacement<
     protected abstract place(
         item: I,
         solution: S,
-        pos: { id: number; x: number; y: number },
+        pos: { cid: number; x: number; y: number },
     ): void;
 }

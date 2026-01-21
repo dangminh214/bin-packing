@@ -5,7 +5,7 @@ import type { Solution } from "@/algorithm/abstract-solution";
 import type { AlgSolution } from "@/binpacking/algorithm-solution";
 
 export type ToPlacePosition = {
-    id: number;
+    cid: number;
     x: number;
     y: number;
     shouldRotate?: boolean;
@@ -26,7 +26,7 @@ export class BottomLeftPlacer extends GreedyPlacement<
     protected canPlace(
         item: Rectangle,
         solution: Solution<Box>,
-    ): { id: number; x: number; y: number } | false {
+    ): { cid: number; x: number; y: number } | false {
         const boxes = solution.items;
 
         // Try to place in existing boxes
@@ -80,7 +80,7 @@ export class BottomLeftPlacer extends GreedyPlacement<
         // 1. bottom-left corner
         if (box.checkPossible(item, { x: 0, y: 0 })) {
             result = {
-                id: box.id,
+                cid: box.id,
                 x: 0,
                 y: 0,
                 shouldRotate,
@@ -98,7 +98,7 @@ export class BottomLeftPlacer extends GreedyPlacement<
                     })
                 ) {
                     result = {
-                        id: box.id,
+                        cid: box.id,
                         x: placed.position.x! + placed.getWidth(),
                         y: placed.position.y!,
                         shouldRotate,
@@ -114,7 +114,7 @@ export class BottomLeftPlacer extends GreedyPlacement<
                     })
                 ) {
                     result = {
-                        id: box.id,
+                        cid: box.id,
                         x: placed.position.x!,
                         y: placed.position.y! + placed.getHeight(),
                         shouldRotate,
@@ -143,7 +143,7 @@ export class BottomLeftPlacer extends GreedyPlacement<
         algSol: AlgSolution,
         toPlacePos: ToPlacePosition,
     ) {
-        const toPlaceBox = algSol.items[toPlacePos.id];
+        const toPlaceBox = algSol.items[toPlacePos.cid];
 
         // Rotate the rectangle if needed
         if (toPlacePos.shouldRotate) {
