@@ -23,14 +23,17 @@ export abstract class GreedyPlacement<
 
     /**
      * check if a rectangle can be placed in a solution
-     * called in @function checkThenAdd
+     * @returns id of container in the solution, position to place it, return false if it is unplaceable
      */
     protected abstract canPlace(
         item: I,
         solution: S,
     ): { id: number; x: number; y: number } | false;
 
-    /** Mutate solution by inserting the item */
+    /**
+     * insert an item into a solution
+     * @param pos id of container in the solution, coordinate to set the item
+     */
     protected abstract place(
         item: I,
         solution: S,

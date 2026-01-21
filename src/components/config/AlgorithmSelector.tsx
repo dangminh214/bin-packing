@@ -1,3 +1,4 @@
+import { CONFIGINPUT, DEFAULTTEXT } from "../tw-classes";
 import { Label } from "../ui/label";
 
 export type AlgorithmType = "greedy" | "localSearch";
@@ -60,7 +61,7 @@ export function AlgorithmSelector({
                     id="algorithm"
                     value={algorithm}
                     onChange={handleAlgorithmChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`${DEFAULTTEXT} border-2 border-blue-500`}
                 >
                     {algorithmOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -80,7 +81,7 @@ export function AlgorithmSelector({
                             e.target.value as SelectionStrategy,
                         )
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`${CONFIGINPUT}`}
                 >
                     {selectionStrategyOptions[algorithm].map((option) => (
                         <option key={option.value} value={option.value}>
@@ -100,7 +101,7 @@ export function AlgorithmSelector({
                             e.target.value as PlacementStrategy,
                         )
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`${CONFIGINPUT}`}
                 >
                     {placementStrategyOptions[algorithm].map((option) => (
                         <option key={option.value} value={option.value}>

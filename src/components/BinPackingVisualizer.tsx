@@ -33,7 +33,7 @@ export function BinPackingVisualizer() {
     return (
         <div className="flex bg-gray-50">
             <div>
-                <h1 className="text-3xl font-bold text-gray-900 mx-5">
+                <h1 className="text-2xl font-bold text-gray-900 mx-5">
                     Bin Packing Visualizer
                 </h1>
 
