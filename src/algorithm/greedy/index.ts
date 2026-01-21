@@ -5,6 +5,13 @@ import type { IItem } from "@/core/i-item";
 import type { GreedyPlacement } from "./placement-strategy";
 import type { GreedySelection } from "./selection-strategy";
 
+/**
+ * Generic algorithm implementation
+ * For bin packing use case:
+ * I should be Rectangle (Item)
+ * C should be Box (Container)
+ * S should be AlgSolution (Solution)
+ */
 export class Greedy<I extends IItem, C, S extends Solution<C>> {
     // the init solution will be extended while the algorithm runnning
     selectionStrategy: GreedySelection<I>; // e.g, first fit descending
@@ -21,6 +28,11 @@ export class Greedy<I extends IItem, C, S extends Solution<C>> {
         this.placementStrategy = placementStrategy;
     }
 
+    /**
+     * Base on the init solution of an algorithm, solve() extends that solution
+     * It appends more item/container
+     * @returns an extended solution
+     */
     solve(): S {
         const start = performance.now();
 
