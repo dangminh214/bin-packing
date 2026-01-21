@@ -22,7 +22,7 @@ export const RectangleVisualization: React.FC<RectangleProps> = ({
             className="absolute border border-gray-700 flex items-center justify-center text-black text-xs font-bold transition-all hover:opacity-80 cursor-pointer box-border"
             style={{
                 left: x,
-                top: y,
+                bottom: y,
                 width,
                 height,
                 backgroundColor: color,
